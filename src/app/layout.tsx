@@ -1,32 +1,33 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Playfair_Display } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter, Playfair_Display } from 'next/font/google';
+import './globals.css';
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
 });
 
 const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-  display: "swap",
+  subsets: ['latin'],
+  variable: '--font-playfair',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "Saketh Kesiraju",
-  description: "Personal website of Saketh Kesiraju",
+  title: 'SwiftLaw — AI Fund Formation Software for Private Funds',
+  description:
+    'SwiftLaw drafts the whole fund suite — LPA, PPM, subscription docs — reviewed by your attorney and filed on schedule.',
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} antialiased font-sans bg-white text-black`}>
+    <html lang='en'>
+      <body
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground`}
+      >
         {children}
       </body>
     </html>
