@@ -2,13 +2,28 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <nav className='fixed top-0 z-50 w-full animate-fade-in border-b border-border bg-background/80 backdrop-blur-xl'>
+    <nav
+      className={[
+        'fixed top-0 z-50 w-full transition-all duration-300',
+        scrolled
+          ? 'border-b border-light/10 bg-navy/90 backdrop-blur-xl'
+          : 'border-b border-light/10 bg-transparent',
+      ].join(' ')}
+    >
       <div className='container mx-auto px-4 py-4 sm:px-6'>
         <div className='relative flex items-center justify-between'>
           <Link
@@ -20,9 +35,9 @@ export function Navbar() {
               alt='SwiftLaw'
               width={24}
               height={24}
-              className='h-6 w-6'
+              className='h-6 w-6 brightness-0 invert'
             />
-            <span className='text-sm font-normal tracking-[0.3em] text-foreground sm:text-base'>
+            <span className='text-sm font-medium tracking-[0.2em] text-light sm:text-base'>
               SWIFTLAW
             </span>
           </Link>
@@ -30,13 +45,13 @@ export function Navbar() {
           <div className='absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex'>
             <Link
               href='/pricing'
-              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+              className='text-sm text-light/70 transition-colors hover:text-light'
             >
               Pricing
             </Link>
             <Link
               href='/docs'
-              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+              className='text-sm text-light/70 transition-colors hover:text-light'
             >
               API
             </Link>
@@ -44,48 +59,42 @@ export function Navbar() {
               href='https://app.vanta.com/tryswiftlaw.com'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+              className='text-sm text-light/70 transition-colors hover:text-light'
             >
               Security
             </Link>
             <Link
               href='/blog'
-              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+              className='text-sm text-light/70 transition-colors hover:text-light'
             >
               Blog
             </Link>
             <Link
               href='/faq'
-              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
+              className='text-sm text-light/70 transition-colors hover:text-light'
             >
               FAQ
             </Link>
           </div>
 
-          <div className='hidden items-center gap-4 md:flex'>
-            <Link
-              href='/law-firms'
-              className='text-sm font-medium text-foreground transition-colors hover:text-muted-foreground'
-            >
-              For Law Firms
-            </Link>
+          <div className='hidden items-center gap-5 md:flex'>
             <Link
               href='https://tryswiftlaw.com/app/'
-              className='text-sm font-medium text-foreground transition-colors hover:text-muted-foreground'
+              className='text-sm font-medium text-light transition-colors hover:text-light/70'
             >
               Sign in
             </Link>
             <Link
               href='/demo'
-              className='inline-flex h-9 items-center justify-center rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80'
+              className='inline-flex h-10 items-center justify-center rounded-full bg-blue px-5 text-sm font-medium text-light transition-colors hover:bg-blue/90'
             >
-              Book a Demo
+              Get in touch
             </Link>
           </div>
 
           <button
             onClick={() => setOpen(!open)}
-            className='p-2 text-foreground transition-colors hover:text-muted-foreground md:hidden'
+            className='p-2 text-light/70 transition-colors hover:text-light md:hidden'
             aria-label='Toggle menu'
           >
             <svg
@@ -108,24 +117,24 @@ export function Navbar() {
         </div>
 
         {open && (
-          <div className='mt-4 flex flex-col gap-3 border-t border-border pt-4 md:hidden'>
-            <Link href='/pricing' className='text-sm text-muted-foreground hover:text-foreground'>
+          <div className='mt-4 flex flex-col gap-3 border-t border-light/10 pt-4 md:hidden'>
+            <Link href='/pricing' className='text-sm text-light/70 hover:text-light'>
               Pricing
             </Link>
-            <Link href='/docs' className='text-sm text-muted-foreground hover:text-foreground'>
+            <Link href='/docs' className='text-sm text-light/70 hover:text-light'>
               API
             </Link>
-            <Link href='/blog' className='text-sm text-muted-foreground hover:text-foreground'>
+            <Link href='/blog' className='text-sm text-light/70 hover:text-light'>
               Blog
             </Link>
-            <Link href='/faq' className='text-sm text-muted-foreground hover:text-foreground'>
+            <Link href='/faq' className='text-sm text-light/70 hover:text-light'>
               FAQ
             </Link>
             <Link
               href='/demo'
-              className='inline-flex h-9 items-center justify-center rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground'
+              className='inline-flex h-10 items-center justify-center rounded-full bg-blue px-5 text-sm font-medium text-light'
             >
-              Book a Demo
+              Get in touch
             </Link>
           </div>
         )}

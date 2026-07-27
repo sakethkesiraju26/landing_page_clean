@@ -1,86 +1,35 @@
-'use client';
-
-import { useState } from 'react';
-
-const chips = [
-  'Draft an LPA from my term sheet',
-  'Analyze Form D filing deadlines',
-  'Compare side letter MFN clauses',
-  'Build a fund closing checklist',
-  'Review LP subscription packet',
-  'Summarize last quarter performance',
-];
+import Link from 'next/link';
 
 export function Hero() {
-  const [value, setValue] = useState('');
-
   return (
-    <section className='relative flex min-h-screen flex-col items-center justify-center bg-background px-6 pt-24 pb-20'>
-      <div className='mx-auto max-w-3xl text-center'>
-        <h1 className='animate-slide-up mb-4 font-sans text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl'>
+    <section className='relative overflow-hidden bg-navy py-32 pt-44 md:pt-56 md:pb-40'>
+      <div className='pointer-events-none absolute inset-0'>
+        <div className='absolute -left-[20%] top-[10%] h-[40rem] w-[40rem] rounded-full bg-teal/20 blur-[140px]' />
+        <div className='absolute right-[-10%] top-[5%] h-[45rem] w-[45rem] rounded-full bg-blue/20 blur-[150px]' />
+        <div className='absolute bottom-[-15%] left-[20%] h-[35rem] w-[35rem] rounded-full bg-blue/25 blur-[130px]' />
+      </div>
+
+      <div className='container relative z-10 mx-auto px-6 text-center'>
+        <h1 className='mx-auto max-w-4xl animate-slide-up font-sans text-5xl font-semibold leading-[1.1] tracking-tight text-light md:text-7xl'>
           AI orchestration for investment management
         </h1>
-        <p className='animate-fade-in mx-auto mb-12 max-w-xl text-lg text-muted-foreground'>
+        <p className='animate-fade-in mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-light/70 md:text-xl' style={{ animationDelay: '0.15s' }}>
           Research, draft, and run fund operations with autonomous agents. Your
           attorneys and investors stay in the loop.
         </p>
-
-        <div className='animate-fade-in mx-auto w-full max-w-2xl' style={{ animationDelay: '0.15s' }}>
-          <div className='rounded-3xl border border-border bg-card p-2 shadow-lg transition-shadow hover:shadow-xl'>
-            <div className='flex items-center gap-2 px-3 py-2'>
-              <input
-                type='text'
-                value={value}
-                onChange={(e) => setValue(e.target.value)}
-                placeholder='What can I help with?'
-                aria-label='Ask SwiftLaw'
-                className='flex-1 bg-transparent text-lg text-foreground outline-none placeholder:text-muted-foreground'
-              />
-              <button
-                type='button'
-                className='flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground transition-colors hover:bg-primary/80 disabled:opacity-40'
-                disabled={!value.trim()}
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='24'
-                  height='24'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  className='h-5 w-5'
-                >
-                  <path d='M5 12h14' />
-                  <path d='m12 5 7 7-7 7' />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <div className='mt-6 flex flex-wrap justify-center gap-2'>
-            {chips.map((chip) => (
-              <button
-                key={chip}
-                type='button'
-                onClick={() => setValue(chip)}
-                className='rounded-full border border-border bg-card px-4 py-2 text-sm text-muted-foreground transition-colors hover:border-foreground hover:text-foreground'
-              >
-                {chip}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div
-          className='animate-fade-in mt-12 flex flex-col items-center justify-center gap-3 text-sm text-muted-foreground sm:flex-row'
-          style={{ animationDelay: '0.25s' }}
-        >
-          <span className='font-medium text-foreground'>DLA Piper</span>
-          <span>·</span>
-          <span>Reviewed by DLA Piper Private Funds Group</span>
+        <div className='animate-fade-in mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row' style={{ animationDelay: '0.25s' }}>
+          <Link
+            href='/demo'
+            className='inline-flex h-12 items-center justify-center rounded-full bg-blue px-8 text-base font-medium text-light transition-colors hover:bg-blue/90'
+          >
+            Get in touch
+          </Link>
+          <Link
+            href='/ai-fund-formation'
+            className='inline-flex h-12 items-center justify-center rounded-full border border-light/20 bg-transparent px-8 text-base font-medium text-light transition-colors hover:bg-light/10'
+          >
+            See how it works
+          </Link>
         </div>
       </div>
     </section>

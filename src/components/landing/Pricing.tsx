@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export function Pricing() {
   return (
-    <section className='border-t border-border bg-background py-24'>
+    <section className='border-t border-border bg-offwhite py-24'>
       <div className='container mx-auto px-6 text-center'>
         <p className='mb-6 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground'>
           Pricing
@@ -15,24 +15,9 @@ export function Pricing() {
         </p>
         <Link
           href='/pricing'
-          className='group inline-flex items-center gap-2 text-base font-medium text-foreground'
+          className='inline-flex h-12 items-center justify-center rounded-full bg-blue px-8 text-base font-medium text-light transition-colors hover:bg-blue/90'
         >
           See pricing
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            width='24'
-            height='24'
-            viewBox='0 0 24 24'
-            fill='none'
-            stroke='currentColor'
-            strokeWidth='2'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            className='h-4 w-4 transition-transform group-hover:translate-x-1'
-          >
-            <path d='M5 12h14' />
-            <path d='m12 5 7 7-7 7' />
-          </svg>
         </Link>
       </div>
     </section>
