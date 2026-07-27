@@ -73,7 +73,6 @@ export function ConductorMock({ className = '' }: { className?: string }) {
                   alt=''
                   width={32}
                   height={26}
-                  unoptimized
                   className='object-contain'
                 />
               </div>
