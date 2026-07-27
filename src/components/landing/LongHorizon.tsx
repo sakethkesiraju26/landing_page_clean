@@ -1,74 +1,87 @@
-const steps = [
+const docs = [
   {
-    title: 'Plan',
-    desc: 'Conductor breaks a complex outcome into discrete, verifiable steps.',
+    title: 'LPA',
+    desc: 'Drafted from your terms. Not a template dump.',
   },
   {
-    title: 'Execute',
-    desc: 'Agents run across documents, data, and tools in parallel.',
+    title: 'PPM',
+    desc: 'Matches the LPA. Every time.',
   },
   {
-    title: 'Review',
-    desc: 'Honesty blocks surface missing data instead of hallucinating.',
+    title: 'Subscription Docs',
+    desc: 'Investor packets, ready for signature.',
   },
   {
-    title: 'Ship',
-    desc: 'Final artifacts land in your workspace, ready for signature or filing.',
+    title: 'Term Sheet',
+    desc: 'Your terms, structured and market-checked.',
+  },
+  {
+    title: 'Side Letters',
+    desc: 'Per-LP terms. MFN tracked automatically.',
+  },
+  {
+    title: 'GP & ManCo Docs',
+    desc: 'The entities behind the fund, papered.',
+  },
+  {
+    title: 'IMA',
+    desc: 'Managed accounts, same engine.',
+  },
+  {
+    title: 'Closing Checklist',
+    desc: 'Every filing and signature, tracked to done.',
   },
 ];
 
 export function LongHorizon() {
   return (
-    <section className='border-y border-[var(--sl-border)] bg-[var(--sl-paper-cool)] py-24'>
-      <div className='mx-auto max-w-6xl px-6'>
-        <div className='lg:grid lg:grid-cols-2 lg:gap-16'>
-          <div>
-            <h2
-              className='text-3xl font-semibold tracking-tight text-[var(--sl-ink)] sm:text-4xl'
-              style={{ fontFamily: 'var(--font-playfair), serif' }}
+    <section className='border-t border-border bg-background py-24 md:py-32'>
+      <div className='container mx-auto px-6'>
+        <div className='mx-auto mb-16 max-w-3xl text-center'>
+          <p className='mb-5 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground'>
+            Get formed
+          </p>
+          <h2 className='font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground md:text-6xl'>
+            Every document your <span className='italic'>fund needs</span>
+          </h2>
+        </div>
+        <div className='mx-auto mb-12 grid max-w-6xl grid-cols-2 gap-4 lg:grid-cols-4'>
+          {docs.map((d) => (
+            <div
+              key={d.title}
+              className='rounded-2xl border border-border bg-card p-7'
             >
-              Agents that run for days, not seconds
-            </h2>
-            <p className='mt-4 text-lg text-[var(--sl-ink-secondary)]'>
-              Some investment workflows — LP onboarding, compliance checks,
-              cross-fund analysis — cannot finish in a single chat turn.
-              SwiftLaw long-horizon runtime keeps them alive, retries on
-              blockers, and reports back when done.
-            </p>
-            <div className='mt-8 flex items-center gap-4'>
-              <div className='text-4xl font-semibold tracking-tight text-[var(--sl-ink)]'>
-                4x
-              </div>
-              <p className='text-sm text-[var(--sl-ink-tertiary)]'>
-                faster close times for fund formation workflows
+              <h3 className='mb-2 font-serif text-lg text-foreground'>
+                {d.title}
+              </h3>
+              <p className='text-sm leading-relaxed text-muted-foreground'>
+                {d.desc}
               </p>
             </div>
-          </div>
-          <div className='mt-12 lg:mt-0'>
-            <div className='relative'>
-              <div className='absolute left-4 top-0 h-full w-px bg-[var(--sl-border)]' />
-              <div className='space-y-8'>
-                {steps.map((step, i) => (
-                  <div
-                    key={step.title}
-                    className='relative flex items-start gap-6 pl-10'
-                  >
-                    <div className='absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full border border-[var(--sl-border)] bg-white text-xs font-semibold text-[var(--sl-ink)]'>
-                      {i + 1}
-                    </div>
-                    <div>
-                      <h3 className='text-lg font-semibold text-[var(--sl-ink)]'>
-                        {step.title}
-                      </h3>
-                      <p className='mt-1 text-sm text-[var(--sl-ink-secondary)]'>
-                        {step.desc}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
+          ))}
+        </div>
+        <div className='text-center'>
+          <a
+            href='/ai-fund-formation'
+            className='group inline-flex items-center gap-2 text-base font-medium text-foreground'
+          >
+            Explore AI fund formation
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              className='h-4 w-4 transition-transform group-hover:translate-x-1'
+            >
+              <path d='M5 12h14' />
+              <path d='m12 5 7 7-7 7' />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

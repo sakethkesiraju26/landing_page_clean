@@ -5,6 +5,7 @@ import './globals.css';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
 });
 
 const playfair = Playfair_Display({
@@ -14,9 +15,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'SwiftLaw — AI orchestration for investment management',
+  title: 'SwiftLaw — AI Fund Formation Software for Private Funds',
   description:
-    'Autonomous agents for research, documents, and operations. SwiftLaw runs multi-step investment management workflows — like Devin for asset managers.',
+    'SwiftLaw drafts the whole fund suite — LPA, PPM, subscription docs — reviewed by your attorney and filed on schedule.',
 };
 
 export default function RootLayout({
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${inter.variable} ${playfair.variable} antialiased font-sans bg-white text-black`}
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased bg-background text-foreground`}
       >
         {children}
       </body>

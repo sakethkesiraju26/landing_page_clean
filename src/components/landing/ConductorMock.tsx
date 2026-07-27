@@ -7,11 +7,13 @@ const prompts = [
   'Start a new fund and draft the LPA',
 ];
 
+const skills = ['Research', 'Drafting', 'Analysis', 'Compliance'];
+
 export function ConductorMock({ className = '' }: { className?: string }) {
   return (
     <div
       className={[
-        'relative overflow-hidden rounded-2xl border border-[var(--sl-border)] bg-white shadow-2xl shadow-black/5',
+        'relative overflow-hidden rounded-2xl border border-[var(--sl-border)] bg-[var(--sl-paper)] shadow-2xl',
         className,
       ]
         .join(' ')
@@ -29,12 +31,12 @@ export function ConductorMock({ className = '' }: { className?: string }) {
           <span>Portfolio</span>
           <span>Integrations</span>
         </div>
-        <div className='flex h-7 w-7 items-center justify-center rounded-full border border-[var(--sl-border)] bg-[var(--sl-paper)] text-[10px] font-semibold text-[var(--sl-ink)]'>
+        <div className='flex h-7 w-7 items-center justify-center rounded-full border border-[var(--sl-border)] bg-[var(--sl-paper-cool)] text-[10px] font-semibold text-[var(--sl-ink)]'>
           S
         </div>
       </div>
       <div className='flex'>
-        <div className='hidden w-44 flex-col gap-4 border-r border-[var(--sl-border-light)] bg-[var(--sl-paper-cool)] p-4 sm:flex'>
+        <div className='hidden w-44 flex-col gap-6 border-r border-[var(--sl-border-light)] bg-[var(--sl-paper-cool)] p-4 sm:flex'>
           <div className='text-xs font-semibold text-[var(--sl-ink)]'>
             New Chat
           </div>
@@ -42,15 +44,19 @@ export function ConductorMock({ className = '' }: { className?: string }) {
             <div className='text-[10px] font-semibold uppercase tracking-wide text-[var(--sl-ink-muted)]'>
               Skills
             </div>
-            <div className='rounded-md border border-[var(--sl-border)] bg-white px-2 py-1.5 text-xs text-[var(--sl-ink-secondary)]'>
-              Research
-            </div>
-            <div className='rounded-md px-2 py-1.5 text-xs text-[var(--sl-ink-muted)]'>
-              Drafting
-            </div>
-            <div className='rounded-md px-2 py-1.5 text-xs text-[var(--sl-ink-muted)]'>
-              Analysis
-            </div>
+            {skills.map((skill, i) => (
+              <div
+                key={skill}
+                className={[
+                  'rounded-md px-2 py-1.5 text-xs',
+                  i === 0
+                    ? 'border border-[var(--sl-border)] bg-white text-[var(--sl-ink)]'
+                    : 'text-[var(--sl-ink-muted)]',
+                ].join(' ')}
+              >
+                {skill}
+              </div>
+            ))}
           </div>
           <div className='space-y-2'>
             <div className='text-[10px] font-semibold uppercase tracking-wide text-[var(--sl-ink-muted)]'>
@@ -59,15 +65,16 @@ export function ConductorMock({ className = '' }: { className?: string }) {
             <div className='text-xs text-[var(--sl-ink-muted)]'>
               Fund IV Q3 review
             </div>
+            <div className='text-xs text-[var(--sl-ink-muted)]'>LPA amendment</div>
             <div className='text-xs text-[var(--sl-ink-muted)]'>
-              LPA amendment
+              Side letter playbook
             </div>
           </div>
         </div>
         <div className='flex-1 p-4 sm:p-6'>
           <div className='flex items-center justify-center py-6 sm:py-8'>
             <div className='text-center'>
-              <div className='mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--sl-border)] bg-[var(--sl-paper)] sm:h-14 sm:w-14'>
+              <div className='mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[var(--sl-border)] bg-[var(--sl-paper-cool)] sm:h-14 sm:w-14'>
                 <Image
                   src='/swiftlaw-logo.svg'
                   alt=''
