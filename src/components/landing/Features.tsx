@@ -72,11 +72,11 @@ const features = [
 
 export function Features() {
   return (
-    <section className='border-t border-border bg-muted/30 py-24 md:py-32'>
+    <section className='border-t border-border bg-background py-24 md:py-32'>
       <div className='container mx-auto px-6'>
         <div className='mx-auto mb-16 max-w-3xl text-center'>
-          <h2 className='mb-6 font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground md:text-6xl'>
-            Launch is <span className='italic'>day one</span>
+          <h2 className='mb-6 font-sans text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-5xl'>
+            Launch is day one
           </h2>
           <p className='text-lg leading-relaxed text-muted-foreground'>
             SwiftLaw is the orchestration layer for investment management. It
@@ -88,10 +88,10 @@ export function Features() {
           {features.map((f) => (
             <div
               key={f.title}
-              className='rounded-2xl border border-border bg-card p-6 text-center'
+              className='rounded-2xl border border-border bg-card p-6 text-center transition-colors hover:border-foreground/20'
             >
               <div className='mb-4 flex justify-center'>{f.icon}</div>
-              <h3 className='mb-2 font-serif text-xl text-foreground'>
+              <h3 className='mb-2 font-sans text-lg font-semibold text-foreground'>
                 {f.title}
               </h3>
               <p className='text-sm leading-relaxed text-muted-foreground'>

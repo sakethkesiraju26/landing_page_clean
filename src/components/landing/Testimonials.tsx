@@ -79,10 +79,10 @@ const audiences = [
 
 export function Testimonials() {
   return (
-    <section className='border-t border-border bg-muted/30 py-24 md:py-32'>
+    <section className='border-t border-border bg-background py-24 md:py-32'>
       <div className='container mx-auto px-6'>
         <div className='mx-auto mb-16 max-w-3xl text-center'>
-          <h2 className='mb-6 font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground md:text-6xl'>
+          <h2 className='mb-6 font-sans text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-5xl'>
             Built for you
           </h2>
           <p className='text-lg leading-relaxed text-muted-foreground'>
@@ -94,12 +94,12 @@ export function Testimonials() {
             <Link
               key={a.title}
               href={a.href}
-              className='group block rounded-2xl border border-border bg-card p-9 transition-colors hover:border-foreground/40'
+              className='group block rounded-2xl border border-border bg-card p-9 transition-colors hover:border-foreground/20'
             >
               <div className='mb-6 flex h-11 w-11 items-center justify-center rounded-full bg-primary text-primary-foreground'>
                 {a.icon}
               </div>
-              <h3 className='mb-3 font-serif text-2xl text-foreground'>
+              <h3 className='mb-3 font-sans text-2xl font-semibold text-foreground'>
                 {a.title}
               </h3>
               <p className='mb-7 text-sm leading-relaxed text-muted-foreground'>

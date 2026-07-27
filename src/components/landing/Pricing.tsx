@@ -7,7 +7,7 @@ export function Pricing() {
         <p className='mb-6 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground'>
           Pricing
         </p>
-        <h2 className='mb-4 font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground md:text-6xl'>
+        <h2 className='mb-4 font-sans text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-6xl'>
           $10,000 a year.
         </h2>
         <p className='mb-9 text-lg leading-relaxed text-muted-foreground'>

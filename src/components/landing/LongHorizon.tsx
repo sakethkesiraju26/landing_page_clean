@@ -1,36 +1,12 @@
 const docs = [
-  {
-    title: 'LPA',
-    desc: 'Drafted from your terms. Not a template dump.',
-  },
-  {
-    title: 'PPM',
-    desc: 'Matches the LPA. Every time.',
-  },
-  {
-    title: 'Subscription Docs',
-    desc: 'Investor packets, ready for signature.',
-  },
-  {
-    title: 'Term Sheet',
-    desc: 'Your terms, structured and market-checked.',
-  },
-  {
-    title: 'Side Letters',
-    desc: 'Per-LP terms. MFN tracked automatically.',
-  },
-  {
-    title: 'GP & ManCo Docs',
-    desc: 'The entities behind the fund, papered.',
-  },
-  {
-    title: 'IMA',
-    desc: 'Managed accounts, same engine.',
-  },
-  {
-    title: 'Closing Checklist',
-    desc: 'Every filing and signature, tracked to done.',
-  },
+  { title: 'LPA', desc: 'Drafted from your terms. Not a template dump.' },
+  { title: 'PPM', desc: 'Matches the LPA. Every time.' },
+  { title: 'Subscription Docs', desc: 'Investor packets, ready for signature.' },
+  { title: 'Term Sheet', desc: 'Your terms, structured and market-checked.' },
+  { title: 'Side Letters', desc: 'Per-LP terms. MFN tracked automatically.' },
+  { title: 'GP & ManCo Docs', desc: 'The entities behind the fund, papered.' },
+  { title: 'IMA', desc: 'Managed accounts, same engine.' },
+  { title: 'Closing Checklist', desc: 'Every filing and signature, tracked to done.' },
 ];
 
 export function LongHorizon() {
@@ -41,17 +17,17 @@ export function LongHorizon() {
           <p className='mb-5 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground'>
             Get formed
           </p>
-          <h2 className='font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground md:text-6xl'>
-            Every document your <span className='italic'>fund needs</span>
+          <h2 className='font-sans text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-5xl'>
+            Every document your fund needs
           </h2>
         </div>
         <div className='mx-auto mb-12 grid max-w-6xl grid-cols-2 gap-4 lg:grid-cols-4'>
           {docs.map((d) => (
             <div
               key={d.title}
-              className='rounded-2xl border border-border bg-card p-7'
+              className='rounded-2xl border border-border bg-card p-7 transition-colors hover:border-foreground/20'
             >
-              <h3 className='mb-2 font-serif text-lg text-foreground'>
+              <h3 className='mb-2 font-sans text-lg font-semibold text-foreground'>
                 {d.title}
               </h3>
               <p className='text-sm leading-relaxed text-muted-foreground'>

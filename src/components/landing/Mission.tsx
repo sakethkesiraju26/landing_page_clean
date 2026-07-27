@@ -69,28 +69,28 @@ const stats = [
 
 export function Mission() {
   return (
-    <section className='border-t border-border bg-muted/30 py-32'>
+    <section className='border-t border-border bg-background py-32'>
       <div className='container mx-auto px-6'>
         <div className='mb-20 text-center'>
           <p className='mb-8 animate-fade-in text-xs font-medium uppercase tracking-widest text-muted-foreground'>
             Results that compound
           </p>
-          <h2 className='mx-auto max-w-4xl animate-slide-up font-serif text-5xl font-light leading-tight text-foreground md:text-7xl'>
-            Proven at <span className='italic'>scale</span>
+          <h2 className='mx-auto max-w-4xl animate-slide-up font-sans text-5xl font-semibold leading-tight text-foreground md:text-7xl'>
+            Proven at scale
           </h2>
         </div>
         <div className='mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3'>
           {stats.map((s, i) => (
             <div
               key={s.label}
-              className='animate-scale-in border border-border bg-background p-8 transition-colors duration-300 hover:border-foreground/30'
+              className='animate-scale-in border border-border bg-card p-8 transition-colors duration-300 hover:border-foreground/20'
               style={{ animationDelay: `${(i + 1) * 0.1}s` }}
             >
               <div className='mb-6 flex items-center gap-4'>
-                <div className='flex h-12 w-12 flex-shrink-0 items-center justify-center bg-foreground text-background'>
+                <div className='flex h-12 w-12 flex-shrink-0 items-center justify-center bg-primary text-primary-foreground'>
                   {s.icon}
                 </div>
-                <p className='font-serif text-4xl text-foreground'>
+                <p className='font-sans text-4xl font-semibold text-foreground'>
                   {s.figure}
                 </p>
               </div>

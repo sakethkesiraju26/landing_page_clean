@@ -1,14 +1,14 @@
 export function ProductShowcase() {
   return (
-    <section className='border-t border-border bg-muted/30 py-24 md:py-32'>
+    <section className='border-t border-border bg-background py-24 md:py-32'>
       <div className='container mx-auto px-6'>
         <div className='mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-2'>
           <div>
             <p className='mb-5 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground'>
               Conductor
             </p>
-            <h2 className='mb-6 font-serif text-4xl font-light leading-[1.1] tracking-tight text-foreground md:text-5xl'>
-              Autonomous agents, <span className='italic'>on your fund 24/7</span>
+            <h2 className='mb-6 font-sans text-4xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-5xl'>
+              Autonomous agents, on your fund 24/7
             </h2>
             <p className='mb-8 text-lg leading-relaxed text-muted-foreground'>
               Conductor is the orchestration layer. It plans the formation, then
@@ -39,7 +39,7 @@ export function ProductShowcase() {
               </svg>
             </a>
           </div>
-          <div className='rounded-2xl border border-border bg-secondary/40 p-8 md:p-10'>
+          <div className='rounded-2xl border border-border bg-muted p-8 md:p-10'>
             <svg
               viewBox='0 0 440 260'
               className='h-auto w-full'
@@ -53,12 +53,12 @@ export function ProductShowcase() {
                 height='56'
                 rx='14'
                 fill='var(--color-card)'
-                stroke='var(--color-swift-forest)'
+                stroke='var(--color-foreground)'
                 strokeWidth='1.5'
               />
               <path
                 d='M48 112 l3.8 9.4 9.4 3.8 -9.4 3.8 -3.8 9.4 -3.8 -9.4 -9.4 -3.8 9.4 -3.8 z'
-                fill='var(--color-swift-forest)'
+                fill='var(--color-foreground)'
               />
               <rect
                 x='20'
@@ -66,7 +66,7 @@ export function ProductShowcase() {
                 width='56'
                 height='19'
                 rx='9.5'
-                fill='var(--color-swift-forest)'
+                fill='var(--color-foreground)'
               />
               <text
                 x='48'
@@ -135,8 +135,8 @@ export function ProductShowcase() {
                 width='168'
                 height='28'
                 rx='7'
-                fill='var(--color-swift-brown)'
-                opacity='0.1'
+                fill='var(--color-foreground)'
+                opacity='0.08'
               />
               {[
                 { y: 70, label: 'Form Delaware LP', done: true },
@@ -148,7 +148,7 @@ export function ProductShowcase() {
                 <g key={step.label} transform={`translate(133 ${step.y})`}>
                   {step.done ? (
                     <>
-                      <circle r='7' fill='var(--color-swift-forest)' />
+                      <circle r='7' fill='var(--color-foreground)' />
                       <path
                         d='M-3 0 l2.2 2.4 L3.5 -2.6'
                         stroke='var(--color-card)'
@@ -163,12 +163,12 @@ export function ProductShowcase() {
                       <circle
                         r='7'
                         fill='none'
-                        stroke='var(--color-swift-brown)'
+                        stroke='var(--color-foreground)'
                         strokeWidth='1.6'
                         strokeDasharray='3.5 2.5'
                         strokeLinecap='round'
                       />
-                      <circle r='2.4' fill='var(--color-swift-brown)' />
+                      <circle r='2.4' fill='var(--color-foreground)' />
                     </>
                   ) : (
                     <circle
@@ -208,7 +208,7 @@ export function ProductShowcase() {
                   height='64'
                   rx='9'
                   fill='var(--color-card)'
-                  stroke='var(--color-swift-forest)'
+                  stroke='var(--color-foreground)'
                   strokeWidth='1.5'
                 />
                 <rect
@@ -218,7 +218,7 @@ export function ProductShowcase() {
                   height='26'
                   rx='3.5'
                   fill='none'
-                  stroke='var(--color-swift-forest)'
+                  stroke='var(--color-foreground)'
                   strokeWidth='1.5'
                 />
                 <rect
@@ -259,7 +259,7 @@ export function ProductShowcase() {
                   LPA.docx
                 </text>
                 <g transform='translate(40 34)'>
-                  <circle cx='5' cy='5' r='5' fill='var(--color-swift-forest)' />
+                  <circle cx='5' cy='5' r='5' fill='var(--color-foreground)' />
                   <path
                     d='M2.8 5 l1.6 1.7 L7.4 3.2'
                     stroke='var(--color-card)'
@@ -295,7 +295,7 @@ export function ProductShowcase() {
                   height='26'
                   rx='3.5'
                   fill='none'
-                  stroke='var(--color-swift-brown)'
+                  stroke='var(--color-foreground)'
                   strokeWidth='1.5'
                 />
                 <rect
@@ -337,7 +337,7 @@ export function ProductShowcase() {
                 </text>
                 <g>
                   <rect x='40' y='38' width='52' height='4' rx='2' fill='var(--color-border)' />
-                  <rect x='40' y='38' width='33' height='4' rx='2' fill='var(--color-swift-brown)' />
+                  <rect x='40' y='38' width='33' height='4' rx='2' fill='var(--color-foreground)' />
                 </g>
               </g>
             </svg>

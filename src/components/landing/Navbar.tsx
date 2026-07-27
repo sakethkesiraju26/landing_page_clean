@@ -8,7 +8,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className='fixed top-0 z-50 w-full animate-fade-in bg-swift-dark/60 backdrop-blur-xl'>
+    <nav className='fixed top-0 z-50 w-full animate-fade-in border-b border-border bg-background/80 backdrop-blur-xl'>
       <div className='container mx-auto px-4 py-4 sm:px-6'>
         <div className='relative flex items-center justify-between'>
           <Link
@@ -20,23 +20,23 @@ export function Navbar() {
               alt='SwiftLaw'
               width={24}
               height={24}
-              className='h-6 w-6 brightness-0 invert'
+              className='h-6 w-6'
             />
-            <span className='text-sm font-normal tracking-[0.3em] text-swift-cream/80 sm:text-base'>
+            <span className='text-sm font-normal tracking-[0.3em] text-foreground sm:text-base'>
               SWIFTLAW
             </span>
           </Link>
 
-          <div className='hidden items-center gap-8 md:flex absolute left-1/2 -translate-x-1/2'>
+          <div className='absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex'>
             <Link
               href='/pricing'
-              className='text-sm text-swift-cream/70 transition-colors hover:text-swift-cream'
+              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
             >
               Pricing
             </Link>
             <Link
               href='/docs'
-              className='text-sm text-swift-cream/70 transition-colors hover:text-swift-cream'
+              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
             >
               API
             </Link>
@@ -44,40 +44,40 @@ export function Navbar() {
               href='https://app.vanta.com/tryswiftlaw.com'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-sm text-swift-cream/70 transition-colors hover:text-swift-cream'
+              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
             >
               Security
             </Link>
             <Link
               href='/blog'
-              className='text-sm text-swift-cream/70 transition-colors hover:text-swift-cream'
+              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
             >
               Blog
             </Link>
             <Link
               href='/faq'
-              className='text-sm text-swift-cream/70 transition-colors hover:text-swift-cream'
+              className='text-sm text-muted-foreground transition-colors hover:text-foreground'
             >
               FAQ
             </Link>
           </div>
 
-          <div className='hidden items-center gap-5 md:flex'>
+          <div className='hidden items-center gap-4 md:flex'>
             <Link
               href='/law-firms'
-              className='inline-flex h-10 items-center justify-center rounded-full border border-swift-cream/60 bg-transparent px-5 text-sm font-medium text-swift-cream transition-colors hover:bg-swift-cream/10'
+              className='text-sm font-medium text-foreground transition-colors hover:text-muted-foreground'
             >
               For Law Firms
             </Link>
             <Link
               href='https://tryswiftlaw.com/app/'
-              className='inline-flex h-10 items-center justify-center rounded-full border border-swift-cream/60 bg-transparent px-5 text-sm font-medium text-swift-cream transition-colors hover:bg-swift-cream/10'
+              className='text-sm font-medium text-foreground transition-colors hover:text-muted-foreground'
             >
               Sign in
             </Link>
             <Link
               href='/demo'
-              className='inline-flex h-10 items-center justify-center rounded-full bg-swift-cream px-5 text-sm font-medium text-swift-green transition-colors hover:bg-swift-cream/90'
+              className='inline-flex h-9 items-center justify-center rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80'
             >
               Book a Demo
             </Link>
@@ -85,7 +85,7 @@ export function Navbar() {
 
           <button
             onClick={() => setOpen(!open)}
-            className='p-2 text-swift-cream/70 transition-colors hover:text-swift-cream md:hidden'
+            className='p-2 text-foreground transition-colors hover:text-muted-foreground md:hidden'
             aria-label='Toggle menu'
           >
             <svg
@@ -108,22 +108,22 @@ export function Navbar() {
         </div>
 
         {open && (
-          <div className='mt-4 flex flex-col gap-3 border-t border-swift-cream/10 pt-4 md:hidden'>
-            <Link href='/pricing' className='text-sm text-swift-cream/70 hover:text-swift-cream'>
+          <div className='mt-4 flex flex-col gap-3 border-t border-border pt-4 md:hidden'>
+            <Link href='/pricing' className='text-sm text-muted-foreground hover:text-foreground'>
               Pricing
             </Link>
-            <Link href='/docs' className='text-sm text-swift-cream/70 hover:text-swift-cream'>
+            <Link href='/docs' className='text-sm text-muted-foreground hover:text-foreground'>
               API
             </Link>
-            <Link href='/blog' className='text-sm text-swift-cream/70 hover:text-swift-cream'>
+            <Link href='/blog' className='text-sm text-muted-foreground hover:text-foreground'>
               Blog
             </Link>
-            <Link href='/faq' className='text-sm text-swift-cream/70 hover:text-swift-cream'>
+            <Link href='/faq' className='text-sm text-muted-foreground hover:text-foreground'>
               FAQ
             </Link>
             <Link
               href='/demo'
-              className='inline-flex h-10 items-center justify-center rounded-full bg-swift-cream px-5 text-sm font-medium text-swift-green'
+              className='inline-flex h-9 items-center justify-center rounded-full bg-primary px-4 text-sm font-medium text-primary-foreground'
             >
               Book a Demo
             </Link>

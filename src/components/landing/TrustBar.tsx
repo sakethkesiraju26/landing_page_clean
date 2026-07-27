@@ -16,7 +16,7 @@ function LogoList() {
       {logos.map((logo) => (
         <span
           key={logo}
-          className='flex h-9 items-center whitespace-nowrap text-lg font-serif text-foreground/60 opacity-60'
+          className='flex h-9 items-center whitespace-nowrap text-lg font-medium text-muted-foreground opacity-80'
         >
           {logo}
         </span>

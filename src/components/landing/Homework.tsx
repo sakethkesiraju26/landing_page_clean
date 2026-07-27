@@ -25,9 +25,9 @@ const guides = [
 
 export function Homework() {
   return (
-    <section className='border-t border-border bg-muted/30 py-24'>
+    <section className='border-t border-border bg-background py-24'>
       <div className='container mx-auto px-6'>
-        <h2 className='mb-12 text-center font-serif text-3xl font-light leading-[1.1] tracking-tight text-foreground md:text-5xl'>
+        <h2 className='mb-12 text-center font-sans text-3xl font-semibold leading-[1.1] tracking-tight text-foreground md:text-5xl'>
           Do your homework
         </h2>
         <div className='mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4'>
@@ -35,9 +35,9 @@ export function Homework() {
             <Link
               key={g.title}
               href={g.href}
-              className='group block rounded-2xl border border-border bg-card p-7 transition-colors hover:border-foreground/40'
+              className='group block rounded-2xl border border-border bg-card p-7 transition-colors hover:border-foreground/20'
             >
-              <h3 className='mb-2 font-serif text-lg text-foreground'>
+              <h3 className='mb-2 font-sans text-lg font-semibold text-foreground'>
                 {g.title}
               </h3>
               <p className='mb-5 text-sm leading-relaxed text-muted-foreground'>
